@@ -142,7 +142,7 @@
         </div>
 
         <div>
-{{--            <x-card :item="$item" :user="$user"></x-card>--}}
+            <x-card :item="$item" :user="$user"></x-card>
         </div>
 
     </section>
