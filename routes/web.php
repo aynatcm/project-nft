@@ -17,13 +17,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class,'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::post('/images', [ImageController::class, 'store'])->name('image.store');
 
-Route::get('/dashboard', function () {
-    return view('welcome');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [HomeController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+
+//Route::get('/dashboard', function () {
+//    return view('welcome');
+//})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
 

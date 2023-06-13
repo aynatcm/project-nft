@@ -19,7 +19,8 @@ class CreateItemController extends Controller
 
     public function index(User $user, Item $item)
     {
-        $items = Item::where('user_id', $user->id)->get();
+//        $items = Item::where('user_id', $user->id)->get();
+        $items = Item::with('user_id')->get();
 
         return view('author', ['user' => $user, 'item' => $items]);
     }
@@ -36,8 +37,8 @@ class CreateItemController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'price' => ['required'],
-            'title' => ['required'],
+            'price' => ['required',min(1)],
+            'title' => ['required',max(35)],
             'description' => ['required'],
             'royalties' => ['required'],
             'size' => ['required'],

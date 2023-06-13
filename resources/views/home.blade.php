@@ -9,7 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap" rel="stylesheet">
     @vite('resources/css/app.css')
     @vite('resources/js/app.js')
-    @vite('resources/js/index.js')
     @stack('styles')
 </head>
 <body class="bg-[#14141F]">
@@ -21,6 +20,7 @@
 @yield('show-item')
 @yield('author')
 @include('_partials.footer')
+@vite('resources/js/index.js')
 </body>
 </html>
 

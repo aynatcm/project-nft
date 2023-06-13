@@ -8,18 +8,18 @@
     <div class="flex items-start justify-between pt-20 pb-20">
         <div class="w-1/2 flex flex-col items-center justify-center">
             <h4 class="text-white text-xl font-bold pb-5 self-center pr-[23%]">Preview item</h4>
-            <x-card></x-card>
+            <x-card-item></x-card-item>
         </div>
 
         <div class="w-1/2 flex flex-col items-center justify-center p-2">
             <span for="file" class="text-white block pb-5 text-left w-full">Upload File</span>
 
             <form action="{{route('image.store')}}" method="post" enctype="multipart/form-data" id="dropzone"
-                  class="dropzone border-[#343444] border-2 p-4 rounded w-full mb-6 text-white">
+                  class="dropzone border-[#343444] border-2 rounded p-4 text-gray-400 bg-transparent w-[96%] mb-6">
                 @csrf
             </form>
 
-            <form action="{{route('create')}}" method="post" enctype="multipart/form-data" class="text-white" >
+            <form action="{{route('create')}}" method="post" enctype="multipart/form-data" class="text-white">
                 @csrf
                 {{--                <label for="file" class="text-white block pb-5">Upload File</label>--}}
                 {{--                <input name="file" type="file" accept=".png,.jpg,.gif,.webp,.mp4" id="file"--}}
@@ -48,7 +48,7 @@
                 @enderror
 
                 <label for="title" class="text-white block pb-5">Title</label>
-                <input name="title" type="text" id="title" onkeyup="getValue()" onchange="getValue()" minlength="4" maxlength="35"
+                <input name="title" type="text" id="title" minlength="4" maxlength="35"
                        class="border-[#343444] border-2 rounded p-4 text-gray-400 bg-transparent w-full mb-6"
                        placeholder="Item Name">
                 @error('title')

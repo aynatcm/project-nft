@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('collections', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->string('img_collection');
             $table->timestamps();
         });
     }

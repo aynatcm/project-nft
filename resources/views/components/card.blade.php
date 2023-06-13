@@ -1,6 +1,5 @@
 <div class="ml-[50px] mr-[50px] grid grid-cols-4  gap-x-[20px] gap-y-10">
 
-
     @foreach($item as $items)
 
         <div class="bg-[#343444] rounded-[20px] h-[520px] w-[330px] p-[20px] flex flex-col gap-y-[21px] ">

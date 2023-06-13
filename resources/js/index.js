@@ -1,14 +1,23 @@
-function getValue() {
-    let x = document.getElementById('title')
-    let text = document.getElementById("name-change")
-    text.innerHTML = x.value.toUpperCase();
+let title = document.getElementById('title')
+let price = document.getElementById('price')
+let text = document.getElementById("name-change")
+let currentTitle = text.innerHTML
+let currentPrice = price.innerHTML
 
-    if (x.value.length >= 35) {
-        // let h1 =  document.createElement('h1')
-        // h1.textContent = 'Llegaste al maximo de caracteres'
-        // text.appendChild(h1)
-
-        alert('Maximo de caracteres')
-        // text.style.wordBreak = 'break-all'
+function validate() {
+    if (text.innerHTML === '') {
+        text.innerHTML = currentTitle;
     }
 }
+
+title.addEventListener('keyup', function () {
+    text.innerHTML = title.value.toUpperCase();
+    validate()
+})
+
+title.addEventListener('change', function () {
+    text.innerHTML = title.value.toUpperCase();
+    validate();
+})
+
+
