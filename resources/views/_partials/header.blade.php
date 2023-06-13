@@ -75,7 +75,7 @@
     @auth()
         <div
             class="h-full m-auto text-center flex flex-col items-center py-20 {{ request()->routeIs('home') ? 'hidden' : 'bg-[#333340]'}}">
-            <h1 class="text-white font-bold text-5xl">Login</h1>
+            <h1 class="text-white font-bold text-5xl">{{Route::current()->getName()}}</h1>
             <span class="flex justify-center pt-3">
             <span class="text-[#8A8AA0] font-normal text-lg">Home / &nbsp;</span>
             <span class="text-[#8A8AA0] font-normal text-lg">Pages /</span>

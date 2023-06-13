@@ -80,7 +80,8 @@
                     totam voluptatibus.</p>
             </div>
 
-            <div class="bg-[#343444] mt-[24px] pt-[12px] pb-[12px] w-[295px] rounded-2xl flex gap-x-[83px] justify-center items-center">
+            <div
+                class="bg-[#343444] mt-[24px] pt-[12px] pb-[12px] w-[295px] rounded-2xl flex gap-x-[83px] justify-center items-center">
                 <div class="block text-white text-[15px] font-bold">Price</div>
                 <div>
                     <span class="block font-bold text-white text-[18px]">{{$item->price}}
@@ -93,12 +94,8 @@
 
     </div>
 
-    <div class="flex overflow-x-scroll gap-x-[20px]">
-        <x-card></x-card>
-        <x-card></x-card>
-        <x-card></x-card>
-        <x-card></x-card>
-        <x-card></x-card>
-    </div>
+{{--    <div class="flex overflow-x-scroll gap-x-[20px]">--}}
+{{--        <x-card :item="$item" :user="$user"></x-card>--}}
+{{--    </div>--}}
 
 @endsection

@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap" rel="stylesheet">
     @vite('resources/css/app.css')
     @vite('resources/js/app.js')
+    @vite('resources/js/index.js')
     @stack('styles')
 </head>
 <body class="bg-[#14141F]">
@@ -20,23 +21,6 @@
 @yield('show-item')
 @yield('author')
 @include('_partials.footer')
-
-<script>
-    function getValue() {
-        let x = document.getElementById('title')
-        let text = document.getElementById("name-change")
-        text.innerHTML = x.value.toUpperCase();
-
-        if (x.value.length >= 35) {
-            // let h1 =  document.createElement('h1')
-            // h1.textContent = 'Llegaste al maximo de caracteres'
-            // text.appendChild(h1)
-
-            alert('Maximo de caracteres')
-            // text.style.wordBreak = 'break-all'
-        }
-    }
-</script>
 </body>
 </html>
 

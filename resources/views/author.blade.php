@@ -1,6 +1,7 @@
 @extends('home')
 @section('author')
-    <div class="bg-#7A798A flex justify-center m-auto gap-x-[225px] pl-[30px] pr-[30px] pt-[30px]">
+    <div
+        class="bg-[#313037] bg-opacity-70 flex justify-center m-auto gap-x-[225px] ml-[50px] mr-[50px] pl-[30px] pr-[30px] pt-[30px] mt-20 rounded-t-2xl">
 
         <div class="flex gap-x-[31px] w-[50%] justify-center items-start">
             <div class="rounded-2xl h-[293px]">
@@ -14,7 +15,8 @@
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum obcaecati dignissimos quae quo ad
                     iste ipsum officiis deleniti asperiores sit.
                 </p>
-                <a href="#" class="flex items-center gap-x-4 pl-5 pr-5 pt-2 pb-2 bg-[#EBEBEB] w-[190px] rounded-2xl text-[13px] text-[#7A798A]">DdzFFzCqrhshMSx....
+                <a href="#"
+                   class="flex items-center gap-x-4 pl-5 pr-5 pt-2 pb-2 bg-[#EBEBEB] w-[190px] rounded-2xl text-[13px] text-[#7A798A]">DdzFFzCqrhshMSx....
                     <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1.60938 1.875H0.671875V16H11.4531V15.0625H1.60938V1.875Z" fill="#7A798A"/>
                         <path d="M11.5669 3.51561L9.8125 1.76123V3.51561H11.5669Z" fill="#7A798A"/>
@@ -68,5 +70,18 @@
         </div>
     </div>
 
+    <div class="bg-[#343444] mb-14 rounded-t-none rounded-b-2xl ml-[50px] mr-[50px] pl-[30px] pr-[30px]">
+        <ul class="flex justify-center gap-x-[135px] pt-[24px] pb-[24px]">
+            <li class="list-item cursor-pointer">ALL</li>
+            <li class="list-item cursor-pointer">ART</li>
+            <li class="list-item cursor-pointer">MUSIC</li>
+            <li class="list-item cursor-pointer">COLLECTIBLES</li>
+            <li class="list-item cursor-pointer">SPORT</li>
+        </ul>
     </div>
+
+    <div>
+        <x-card :item="$item" :user="$user"></x-card>
+    </div>
+
 @endsection

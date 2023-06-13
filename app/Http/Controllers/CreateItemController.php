@@ -17,10 +17,11 @@ class CreateItemController extends Controller
 //        return view('create-item', ['user' => $user, 'categories' => $categories, 'collections' => $collections]);
 //    }
 
-    public function index(User $user)
+    public function index(User $user, Item $item)
     {
         $items = Item::where('user_id', $user->id)->get();
-        return view('author', ['user' => $user]);
+
+        return view('author', ['user' => $user, 'item' => $items]);
     }
 
     public function create(User $user)

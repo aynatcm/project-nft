@@ -141,13 +141,10 @@
             </div>
         </div>
 
-        <div class="flex gap-x-4 justify-center overflow-x-scroll">
-            <x-card></x-card>
-            <x-card></x-card>
-            <x-card></x-card>
-            <x-card></x-card>
-            <x-card></x-card>
+        <div>
+{{--            <x-card :item="$item" :user="$user"></x-card>--}}
         </div>
+
     </section>
 
     <section>
