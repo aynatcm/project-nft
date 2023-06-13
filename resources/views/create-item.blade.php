@@ -1,5 +1,10 @@
 @extends('home')
 @section('create')
+    @push('styles')
+        <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css"/>
+    @endpush
+
+
     <div class="flex items-start justify-between pt-20 pb-20">
         <div class="w-1/2 flex flex-col items-center justify-center">
             <h4 class="text-white text-xl font-bold pb-5 self-center pr-[23%]">Preview item</h4>
@@ -7,10 +12,18 @@
         </div>
 
         <div class="w-1/2 flex flex-col items-center justify-center p-2">
-            <form action="" method="post" enctype="multipart/form-data" class="text-white">
-                <label for="file" class="text-white block pb-5">Upload File</label>
-                <input name="file" type="file" accept=".png,.jpg,.gif,.webp,.mp4" id="file"
-                       class="border-[#343444] border-2 p-4 rounded w-full mb-6">
+            <span for="file" class="text-white block pb-5 text-left w-full">Upload File</span>
+
+            <form action="{{route('image.store')}}" method="post" enctype="multipart/form-data" id="dropzone"
+                  class="dropzone border-[#343444] border-2 p-4 rounded w-full mb-6 text-white">
+                @csrf
+            </form>
+
+            <form action="{{route('create')}}" method="post" enctype="multipart/form-data" class="text-white" >
+                @csrf
+                {{--                <label for="file" class="text-white block pb-5">Upload File</label>--}}
+                {{--                <input name="file" type="file" accept=".png,.jpg,.gif,.webp,.mp4" id="file"--}}
+                {{--                       class="border-[#343444] border-2 p-4 rounded w-full mb-6">--}}
 
                 <label for="method" class="text-white block pb-5">
                     Select Method
@@ -30,59 +43,92 @@
                 <input name="price" type="text" id="price"
                        class="border-[#343444] border-2 rounded p-4 text-gray-400 bg-transparent w-full mb-6"
                        placeholder="Enter price for one item (ETH)">
+                @error('price')
+                <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{$message}}</p>
+                @enderror
 
                 <label for="title" class="text-white block pb-5">Title</label>
-                <input name="name" type="text" id="title" onkeyup="getValue()" minlength="4" maxlength="35"
+                <input name="title" type="text" id="title" onkeyup="getValue()" onchange="getValue()" minlength="4" maxlength="35"
                        class="border-[#343444] border-2 rounded p-4 text-gray-400 bg-transparent w-full mb-6"
                        placeholder="Item Name">
+                @error('title')
+                <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{$message}}</p>
+                @enderror
 
                 <label for="description" class="text-white block pb-5">Description</label>
                 <textarea name="description" id="description"
                           class="border-[#343444] border-2 rounded p-4 text-gray-400 bg-transparent w-full mb-6 resize-none"
                           placeholder="Enter price for one item (ETH)"></textarea>
+                @error('description')
+                <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{$message}}</p>
+                @enderror
 
                 <div class="flex gap-x-4 flex-wrap">
                     <div class="w-[31.5%]">
                         <label for="royalties" class="text-white block pb-5">Royalties</label>
-                        <input name="royalties" type="text" id="royalties"
+                        <input name="royalties" type="number" id="royalties"
                                class="border-[#343444] border-2 rounded p-4 text-gray-400 bg-transparent w-full mb-6 resize-none"
                                placeholder="5%">
+                        @error('royalties')
+                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{$message}}</p>
+                        @enderror
                     </div>
 
                     <div class="w-[31.5%]">
                         <label for="size" class="text-white block pb-5">Size</label>
-                        <input name="size" type="text" id="size"
+                        <input name="size" type="number" id="size"
                                class="border-[#343444] border-2 rounded p-4 text-gray-400 bg-transparent w-full mb-6 resize-none"
                                placeholder="Size">
+                        @error('size')
+                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{$message}}</p>
+                        @enderror
                     </div>
 
+                    {{--                    <div class="w-[31.5%]">--}}
+                    {{--                        <label for="collection" class="text-white block pb-5">Collection</label>--}}
+                    {{--                        <select name="collection" id="collection"--}}
+                    {{--                                class="border-[#343444] border-2 rounded p-4 text-gray-400 bg-transparent w-full mb-6 resize-none">--}}
+                    {{--                            <option value="Abstraction">Abstraction</option>--}}
+                    {{--                            <option value="Art">Patternlicious</option>--}}
+                    {{--                            <option value="Art">Skecthify</option>--}}
+                    {{--                            <option value="Art">Cartoonism</option>--}}
+                    {{--                            <option value="Art">Virtuland</option>--}}
+                    {{--                            <option value="Art">Virtuland</option>--}}
+                    {{--                        </select>--}}
+                    {{--                    </div>--}}
+
                     <div class="w-[31.5%]">
-                        <label for="collection" class="text-white block pb-5">Collection</label>
-                        <select name="collection" id="collection"
-                                class="border-[#343444] border-2 rounded p-4 text-gray-400 bg-transparent w-full mb-6 resize-none">
-                            <option value="Abstraction">Abstraction</option>
-                            <option value="Art">Patternlicious</option>
-                            <option value="Art">Skecthify</option>
-                            <option value="Art">Cartoonism</option>
-                            <option value="Art">Virtuland</option>
-                            <option value="Art">Virtuland</option>
+                        <label class="collection text-white block pb-5">Collection
+                        </label>
+                        <select
+                            class="border-[#343444] border-2 rounded p-4 text-gray-400 bg-transparent w-full mb-6 resize-none"
+                            name="collection_id" id="">
+                            @foreach($collections as $collection)
+                                <option value="{{$collection->id}}">{{$collection->name}}</option>
+                            @endforeach
                         </select>
                     </div>
 
                     <div class="w-full">
                         <label for="collection" class="text-white block pb-5">Categories</label>
-                        <select name="categories" id="collection"
+                        <select name="category_id" id="collection"
                                 class="border-[#343444] border-2 rounded p-4 text-gray-400 bg-transparent w-full mb-6">
-                            <option value="Art" selected>Art</option>
-                            <option value="Art">Music</option>
-                            <option value="Art">Domain Name</option>
-                            <option value="Art">Virtual World</option>
-                            <option value="Art">Trading Cards</option>
-                            <option value="Art">Sports</option>
+
+                            @foreach($categories as $category)
+                                <option value="{{$category->id}}">{{$category->name}}</option>
+                            @endforeach
                         </select>
                     </div>
                 </div>
-
+                <div class="mb-5">
+                    <input name="img_item" value="{{old('img_item')}}" type="hidden">
+                    @error('img_item')
+                    <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{$message}}</p>
+                    @enderror
+                </div>
+                <button type="submit" class="bg-[#5142FC] text-white text-[15px] font-bold py-3 rounded-xl px-10 mt-5">
+                    Submit
+                </button>
             </form>
         </div>
     </div>

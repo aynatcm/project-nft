@@ -63,7 +63,7 @@
                     @csrf
                     <button type="submit"
                             class="text-white flex items-center gap-x-2.5 px-9 py-3 border-[1px] border-[#5142FC] rounded-3xl text-[15px]">
-                        Cerrar Sesión
+                        Logout
                     </button>
                 </form>
             @endauth
@@ -79,7 +79,7 @@
             <span class="flex justify-center pt-3">
             <span class="text-[#8A8AA0] font-normal text-lg">Home / &nbsp;</span>
             <span class="text-[#8A8AA0] font-normal text-lg">Pages /</span>
-            <span class="text-white font-normal text-lg">&nbsp; {{__("You are logged" )}} {{ Auth::user()->name }}</span>
+            <span class="text-white font-normal text-lg">&nbsp; {{__("You are logged in" )}} {{ Auth::user()->name }}</span>
 
         </span>
         </div>
