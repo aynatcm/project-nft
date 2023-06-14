@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CreateCollectionItem;
 use App\Http\Controllers\CreateItemController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImageController;
@@ -49,5 +50,9 @@ Route::middleware('auth')->group(function () {
 Route::get('/{user:name}/items/{item}', [CreateItemController::class, 'show'])->name('show');
 
 Route::get('/author/{user:name}', [CreateItemController::class, 'index'])->name('author');
+
+Route::get('/create-collection', [CreateCollectionItem::class, 'index'])->name('collection');
+
+Route::post('/create-collection', [CreateCollectionItem::class, 'store'])->name('collection.store');
 
 require __DIR__ . '/auth.php';

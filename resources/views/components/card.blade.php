@@ -1,11 +1,11 @@
 <div class="ml-[50px] mr-[50px] grid grid-cols-4  gap-x-[20px] gap-y-10">
 
-    @foreach($item as $items)
+    @foreach($items as $item)
 
         <div class="bg-[#343444] rounded-[20px] h-[520px] w-[330px] p-[20px] flex flex-col gap-y-[21px] ">
             <div class="bg-[#7A798A] w-[290px] h-[283px] rounded-[20px] relative group block duration-300 ease-in-out">
-                <a href="{{route('show',['item'=>$items, 'user'=>$items->user])}}">
-                    <img src="{{asset('uploads').'/'.$items->img_item}}" alt=""
+                <a href="{{route('show',['item'=>$item, 'user'=>$item->user])}}">
+                    <img src="{{asset('uploads').'/'.$item->img_item}}" alt=""
                          class="w-full h-full rounded-3xl object-cover z-10  "
                          id="image-preview">
                 </a>
@@ -29,13 +29,13 @@
 
             </div>
             <div>
-                <h2 class="text-white mb-[17px] break-all" id="name-change">{{$items->title}}</h2>
+                <h2 class="text-white mb-[17px] break-all" id="name-change">{{$item->title}}</h2>
                 <div class="flex gap-x-[97px] items-center gap-y-[19px] mb-[19px]">
                     <div class="flex gap-x-[12px] items-center">
                         <div class="bg-[#7A798A] h-[44px] w-[44px] rounded-[15px]"></div>
                         <div>
                             <h4 class="text-[#8A8AA0] font-normal text-[13px] leading-[20px]">Creator</h4>
-                            <h3 class="text-white font-bold text-[15px] leading-[22px] break-all w-[70px]">{{$items->user->name}}</h3>
+                            <h3 class="text-white font-bold text-[15px] leading-[22px] break-all w-[70px]">{{$item->user->name}}</h3>
                         </div>
                     </div>
                     <div
@@ -48,9 +48,9 @@
                     <div class=>
                         <h4 class="text-[#8A8AA0] font-normal text-[13px] leading-[20px]">Current Bid</h4>
                         <div class="flex gap-x-[7px] items-center">
-                            <h2 class="text-white">{{$items->price}}</h2>
+                            <h2 class="text-white">{{$item->price}}</h2>
                             <h4 class="text-[#8A8AA0] font-normal text-[13px] leading-[20px]">
-                                = {{$items->price*1747.92}}</h4>
+                                = {{$item->price*1747.92}}</h4>
                         </div>
                     </div>
 

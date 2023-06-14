@@ -97,6 +97,7 @@
                     {{--                        </select>--}}
                     {{--                    </div>--}}
 
+
                     <div class="w-[31.5%]">
                         <label class="collection text-white block pb-5">Collection
                         </label>

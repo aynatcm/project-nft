@@ -20,25 +20,26 @@ class CreateItemController extends Controller
     public function index(User $user, Item $item)
     {
 //        $items = Item::where('user_id', $user->id)->get();
-        $items = Item::with('user_id')->get();
+        $items = Item::with('user')->where('user_id', $user->id)->get();
 
         return view('author', ['user' => $user, 'item' => $items]);
     }
 
-    public function create(User $user)
+    public function create(User $user, Item $item)
     {
         $categories = Category::all()->keyBy('id');
         $collections = Collection::all()->keyBy('id');
-        $users = User::all()->keyBy('id');
+        $user = User::all()->keyBy('id');
+        $item = Item::all();
 
-        return view('create-item', ['users' => $users, 'categories' => $categories, 'collections' => $collections]);
+        return view('create-item', ['users' => $user, 'categories' => $categories, 'collections' => $collections, 'item' => $item]);
     }
 
     public function store(Request $request)
     {
         $this->validate($request, [
-            'price' => ['required',min(1)],
-            'title' => ['required',max(35)],
+            'price' => ['required'],
+            'title' => ['required'],
             'description' => ['required'],
             'royalties' => ['required'],
             'size' => ['required'],
@@ -64,8 +65,9 @@ class CreateItemController extends Controller
     {
         $user = User::where('name', $name)->firstOrFail();
         $item = Item::where('id', $item)->where('user_id', $user->id)->firstOrFail();
+        $collection = Collection::with('user', 'items')->get();
 
-        return view('show', ['item' => $item, 'user' => $user]);
+        return view('show', ['item' => $item, 'user' => $user,'collection' => $collection]);
     }
 
 

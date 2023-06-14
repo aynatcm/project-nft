@@ -75,9 +75,7 @@
             </div>
 
             <div class="mt-4 mb-5">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium assumenda, at consectetur
-                    eius est ex fuga harum ipsa nostrum odio, possimus provident quidem quis quos recusandae reiciendis
-                    totam voluptatibus.</p>
+                <p>{{$item->description}}</p>
             </div>
 
             <div
@@ -94,8 +92,8 @@
 
     </div>
 
-{{--    <div class="flex overflow-x-scroll gap-x-[20px]">--}}
-{{--        <x-card :item="$item" :user="$user"></x-card>--}}
-{{--    </div>--}}
+    {{--    <div class="flex overflow-x-scroll gap-x-[20px]">--}}
+    {{--        <x-card :item="$item" :user="$user"></x-card>--}}
+    {{--    </div>--}}
 
 @endsection

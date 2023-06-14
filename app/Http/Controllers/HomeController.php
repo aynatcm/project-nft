@@ -2,16 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Collection;
 use App\Models\Item;
 use App\Models\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index(Item $item, User $user)
+    public function index()
     {
-        $item = Item::all();
-        $user = User::all();
-        return view('welcome', ['item' => $item, 'user' => $user]);
+        $items = Item::with('user')->get();
+        $collection = Collection::with('user','items')->get();
+        return view('welcome', ['items'=>$items, 'collection' => $collection]);
     }
 }

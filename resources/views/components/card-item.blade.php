@@ -28,7 +28,7 @@
                 <div class="bg-[#7A798A] h-[44px] w-[44px] rounded-[15px]"></div>
                 <div>
                     <h4 class="text-[#8A8AA0] font-normal text-[13px] leading-[20px]">Creator</h4>
-                    <h3 class="text-white font-bold text-[15px] leading-[22px] break-all w-[70px]">SalvadorDali</h3>
+                    <h3 class="text-white font-bold text-[15px] leading-[22px] break-all w-[70px]">{{auth()->user()->name}}</h3>
                 </div>
             </div>
             <div
@@ -37,11 +37,11 @@
             </div>
         </div>
         <hr class="border-black mb-[10px]">
-        <div class="flex gap-x-[95px] items-center">
+        <div class="flex gap-x-[50px] items-center">
             <div class=>
                 <h4 class="text-[#8A8AA0] font-normal text-[13px] leading-[20px]">Current Bid</h4>
                 <div class="flex gap-x-[7px] items-center">
-                    <h2 class="text-white">4.89 ETH</h2>
+                    <h2 class="text-white" id="price-change">4.89 ETH</h2>
                     <h4 class="text-[#8A8AA0] font-normal text-[13px] leading-[20px]">= $12.246</h4>
                 </div>
             </div>

@@ -17,7 +17,12 @@ class Item extends Model
 
     public function user(): BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function collections(): BelongsTo
+    {
+        return $this->belongsTo(Item::class);
     }
 
     protected $fillable = [

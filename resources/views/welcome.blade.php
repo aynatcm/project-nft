@@ -142,7 +142,7 @@
         </div>
 
         <div>
-            <x-card :item="$item" :user="$user"></x-card>
+            <x-card :items="$items"></x-card>
 {{--            <x-card-item></x-card-item>--}}
         </div>
 
@@ -155,6 +155,9 @@
                 <a href="#">Explore more</a>
                 <div class="bg-gradient-to-r from-[#E250E5] to-[#4B50E6] h-[1px]"></div>
             </div>
+        </div>
+        <div class="flex gap-x-4 p-6">
+            <x-collection-item :collection="$collection"></x-collection-item>
         </div>
     </section>
 
