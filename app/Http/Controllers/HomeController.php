@@ -12,7 +12,8 @@ class HomeController extends Controller
     public function index()
     {
         $items = Item::with('user')->get();
-        $collection = Collection::with('user','items')->get();
-        return view('welcome', ['items'=>$items, 'collection' => $collection]);
+        $users = User::all();
+        $collection = Collection::with('items')->get();
+        return view('welcome', ['items'=>$items, 'collection' => $collection,'users'=>$users]);
     }
 }

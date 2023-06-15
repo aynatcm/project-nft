@@ -156,8 +156,23 @@
                 <div class="bg-gradient-to-r from-[#E250E5] to-[#4B50E6] h-[1px]"></div>
             </div>
         </div>
-        <div class="flex gap-x-4 p-6">
+        <div class="flex gap-x-4 p-6 ml-[50px] mr-[50px]">
             <x-collection-item :collection="$collection"></x-collection-item>
+        </div>
+    </section>
+
+    <section>
+        <div class="flex text-white pt-[60px] px-[255px] justify-between items-center mb-[60px]">
+            <h1 class="font-bold text-[36px] leading-[44px]">Popullar Colection</h1>
+            <div>
+                <a href="#">Top Seller</a>
+                <div class="bg-gradient-to-r from-[#E250E5] to-[#4B50E6] h-[1px]"></div>
+            </div>
+        </div>
+        <div class="flex gap-x-4 p-6 ml-[50px] mr-[50px]">
+            @foreach($users as $user)
+                <h2>{{$user->name}}</h2>
+            @endforeach
         </div>
     </section>
 
