@@ -143,7 +143,7 @@
 
         <div>
             <x-card :items="$items"></x-card>
-{{--            <x-card-item></x-card-item>--}}
+            {{--            <x-card-item></x-card-item>--}}
         </div>
 
     </section>
@@ -163,16 +163,44 @@
 
     <section>
         <div class="flex text-white pt-[60px] px-[255px] justify-between items-center mb-[60px]">
-            <h1 class="font-bold text-[36px] leading-[44px]">Popullar Colection</h1>
+            <h1 class="font-bold text-[36px] leading-[44px]">Top Seller</h1>
             <div>
-                <a href="#">Top Seller</a>
                 <div class="bg-gradient-to-r from-[#E250E5] to-[#4B50E6] h-[1px]"></div>
             </div>
         </div>
-        <div class="flex gap-x-4 p-6 ml-[50px] mr-[50px]">
+        <div class="flex gap-x-4 p-6 ml-[50px] mr-[50px] items-center">
+
             @foreach($users as $user)
-                <h2>{{$user->name}}</h2>
+                <div class="bg-[#7A798A] w-[100px] h-[100px] rounded-2xl relative">
+                    <img src="{{asset('img/avatar.png')}}" alt="">
+                    <div class="absolute right-[-10px] bottom-[-10px]">
+                        <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="13" cy="13" r="13" fill="#5142FC"/>
+                            <path
+                                d="M11.2799 18.3407C11.1396 18.4817 10.9484 18.5604 10.7496 18.5604C10.5509 18.5604 10.3596 18.4817 10.2194 18.3407L5.9849 14.1054C5.5454 13.6659 5.5454 12.9534 5.9849 12.5147L6.51515 11.9844C6.95465 11.5449 7.6664 11.5449 8.1059 11.9844L10.7496 14.6282L17.8934 7.48441C18.3329 7.04491 19.0454 7.04491 19.4841 7.48441L20.0144 8.01466C20.4539 8.45416 20.4539 9.16666 20.0144 9.60541L11.2799 18.3407Z"
+                                fill="white"/>
+                        </svg>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="text-white pb-1 font-bold">{{$user->name}}</h2>
+                    <h2 class="text-white pb-1 ">214.2 ETH</h2>
+                </div>
             @endforeach
+
+        </div>
+    </section>
+
+
+    <section class="mb-20">
+        <div class="flex text-white pt-[60px] px-[255px] justify-between items-center mb-[60px]">
+            <h1 class="font-bold text-[36px] leading-[44px]">Today's Picks</h1>
+            <div>
+                <div class="bg-gradient-to-r from-[#E250E5] to-[#4B50E6] h-[1px]"></div>
+            </div>
+        </div>
+        <div>
+            <x-card :items="$items"></x-card>
         </div>
     </section>
 

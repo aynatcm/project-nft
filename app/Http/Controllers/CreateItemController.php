@@ -65,9 +65,10 @@ class CreateItemController extends Controller
     {
         $user = User::where('name', $name)->firstOrFail();
         $item = Item::where('id', $item)->where('user_id', $user->id)->firstOrFail();
+        $items = $user->items()->where('id','!=',$item->id)->get();
         $collection = Collection::with('user', 'items')->get();
 
-        return view('show', ['item' => $item, 'user' => $user,'collection' => $collection]);
+        return view('show', ['item' => $item, 'user' => $user, 'collection' => $collection, 'items' => $items]);
     }
 
 

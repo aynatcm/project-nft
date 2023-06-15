@@ -88,12 +88,15 @@
                 </div>
             </div>
 
+
         </div>
+
 
     </div>
 
-    {{--    <div class="flex overflow-x-scroll gap-x-[20px]">--}}
-    {{--        <x-card :item="$item" :user="$user"></x-card>--}}
-    {{--    </div>--}}
+        <section class="mb-40">
+            <x-card :items="$items"></x-card>
+        </section>
+
 
 @endsection

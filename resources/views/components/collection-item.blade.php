@@ -1,10 +1,10 @@
 @foreach($collection as $collect)
     <div class="gallery flex w-[355px] flex-col bg-[#343444] p-3 gap-1 rounded-[10px]">
-        <div class="grid grid-cols-3 gap-1 w-full">
+        <div class="grid grid-cols-3 gap-2 w-full">
             {{--{{dd($imgCollection)->toArray()}}--}}
 
             @foreach($collect->items as $item)
-                <img src="{{asset('uploads'.'/'.$item->img_item)}}" alt="">
+                <img src="{{asset('uploads'.'/'.$item->img_item)}}" alt="image of a item" class="rounded-2xl">
             @endforeach
         </div>
 
