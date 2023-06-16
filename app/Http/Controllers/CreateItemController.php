@@ -7,6 +7,7 @@ use App\Models\Collection;
 use App\Models\Item;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CreateItemController extends Controller
 {
@@ -65,11 +66,22 @@ class CreateItemController extends Controller
     {
         $user = User::where('name', $name)->firstOrFail();
         $item = Item::where('id', $item)->where('user_id', $user->id)->firstOrFail();
-        $items = $user->items()->where('id','!=',$item->id)->get();
+        $items = $user->items()->where('id', '!=', $item->id)->get();
         $collection = Collection::with('user', 'items')->get();
 
         return view('show', ['item' => $item, 'user' => $user, 'collection' => $collection, 'items' => $items]);
     }
 
+
+    public function like(Item $item)
+    {
+        if ($like = $item->likes()->where('user_id', Auth::id())->first()) {
+            $like->delete();
+        } else {
+            $item->likes()->create(['user_id' => Auth::id()]);
+        };
+
+        return back();
+    }
 
 }

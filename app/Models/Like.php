@@ -13,4 +13,8 @@ class Like extends Model
     {
         return $this->morphTo();
     }
+
+    protected $fillable = [
+        'user_id'
+    ];
 }

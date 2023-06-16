@@ -44,7 +44,11 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/create-collection', [CreateCollectionItem::class, 'index'])->name('collection');
 
-    Route::post('/create-collection', [CreateCollectionItem::class, 'store'])->name('collection.store');});
+    Route::post('/create-collection', [CreateCollectionItem::class, 'store'])->name('collection.store');
+
+    Route::post('/items/{item}/likes',[CreateItemController::class,'like'])->name('items.item.likes');
+
+});
 
 //Route::get('/create-item', function () {
 //    return view('create-item');
