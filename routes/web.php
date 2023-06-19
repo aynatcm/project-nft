@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\CollectionController;
 use App\Http\Controllers\CreateCollectionItem;
 use App\Http\Controllers\CreateItemController;
+use App\Http\Controllers\FollowersController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\ProfileController;
@@ -48,6 +50,11 @@ Route::middleware('auth')->group(function () {
 
     Route::post('/items/{item}/likes',[CreateItemController::class,'like'])->name('items.item.likes');
 
+    Route::post('/collection/{collection}/likes',[CollectionController::class,'like'])->name('collections.collection.likes');
+
+    Route::post('/author/{user:name}/follow',[FollowersController::class,'store'])->name('followers.store');
+
+    Route::delete('/author/{user:name}/follow',[FollowersController::class,'destroy'])->name('followers.destroy');
 });
 
 //Route::get('/create-item', function () {

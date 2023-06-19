@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Collection;
 use App\Models\Item;
+use App\Models\Like;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -80,7 +81,6 @@ class CreateItemController extends Controller
         } else {
             $item->likes()->create(['user_id' => Auth::id()]);
         };
-
         return back();
     }
 

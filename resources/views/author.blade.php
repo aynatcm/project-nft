@@ -65,8 +65,23 @@
                 </svg>
             </span>
             </div>
-            <a href="#"
-               class="h-[40px] flex items-center justify-center p-4 border-white border-2 rounded-2xl text-white">Follow</a>
+
+
+            <form action="{{route('followers.store',$user)}}" method="post">
+                @csrf
+                <button class="h-[40px] flex items-center justify-center p-4 border-white border-2 rounded-2xl text-white">
+                    Follow
+                </button>
+            </form>
+
+            <form action="{{route('followers.destroy',$user)}}" method="post">
+                @csrf
+                @method('DELETE')
+                <button class="h-[40px] flex items-center justify-center p-4 border-white border-2 rounded-2xl text-white">
+                    Unfollow
+                </button>
+            </form>
+
         </div>
     </div>
 
