@@ -1,4 +1,4 @@
-<footer class="bg-[#0D0D11] flex ps-52 pe-52 py-20 gap-x-[100px]">
+<footer class="bg-[#0D0D11] flex ps-52 pe-52 py-20 gap-x-[100px] sm:max-md:px-2 sm:max-md:flex-col sm:max-md:gap-y-4 md:max-lg:flex-wrap md:max-lg:px-10 md:max-lg:gap-y-4 lg:max-xl:flex-wrap lg:max-2xl:gap-y-4">
     <div class="w-[20%]">
         <svg width="133" height="56" viewBox="0 0 133 56" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -53,7 +53,7 @@
         </div>
     </div>
 
-    <div class="w-[20%]">
+    <div class="w-[20%] sm:max-md:w-full">
         <h6 class="heading-footer">My account</h6>
         <ul>
             <li><a href="#" class="list-item-footer">Authors</a></li>
@@ -63,7 +63,7 @@
         </ul>
     </div>
 
-    <div class="w-[20%]">
+    <div class="w-[20%] sm:max-md:w-full">
         <h6 class="heading-footer">Resources</h6>
         <ul>
             <li><a href="#" class="list-item-footer">Help & Support</a></li>
@@ -73,7 +73,7 @@
         </ul>
     </div>
 
-    <div class="w-[20%]">
+    <div class="w-[20%] sm:max-md:w-full">
         <h6 class="heading-footer">Company</h6>
         <ul>
             <li><a href="#" class="list-item-footer">About Us</a></li>
@@ -83,11 +83,11 @@
         </ul>
     </div>
 
-    <div class="w-[20%]">
+    <div class="w-[20%] sm:max-md:w-full">
         <h6 class="heading-footer">Subscribe Us</h6>
-        <form action="" method="post" class="relative">
+        <form action="" method="post" class="relative sm:max-md:w-full sm:max-md:inline md:max-lg:inline md:max-lg:w-full lg:max-2xl:w-full lg:max-2xl:inline">
             <input type="email" placeholder="email" name="email" id="email" class="pt-[17px] pb-[17px] pl-[17px] rounded-xl bg-transparent border-[#343444] border text-[#8A8AA0]">
-            <button class="bg-blue-700 p-1 block w-16 absolute text-center rounded-tl-none rounded-tr-[10px] rounded-br-[10px] rounded-bl-none pt-5 pb-5 pl-6 pr-6 right-[-10px] top-0">
+            <button class="bg-blue-700 p-1 block w-16 absolute text-center rounded-tl-none rounded-tr-[10px] rounded-br-[10px] rounded-bl-none pt-5 pb-5 pl-6 pr-6 right-[-10px] top-0 sm:max-md:right-0 sm:max-md:top-[-1.3rem] md:max-lg:right-0 md:max-lg:top-[-1.3rem] lg:max-2xl:right-0 lg:max-2xl:top-[-1.3rem]">
                 <svg class="m-auto" width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M0.915334 0.188759C1.23957 -0.0449367 1.67182 -0.0631242 2.01454 0.142509L17.0145 9.14251C17.3157 9.32323 17.5 9.64874 17.5 10C17.5 10.3513 17.3157 10.6768 17.0145 10.8575L2.01454 19.8575C1.67182 20.0631 1.23957 20.0449 0.915334 19.8112C0.591098 19.5775 0.437155 19.1732 0.523857 18.7831L2.25343 11L7.5 11C8.05228 11 8.5 10.5523 8.5 10C8.5 9.44772 8.05228 9 7.5 9L2.25343 9L0.523857 1.21693C0.437155 0.826771 0.591098 0.422456 0.915334 0.188759Z"

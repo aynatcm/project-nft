@@ -2,16 +2,16 @@
 @section('content')
     <section>
 
-        <div class="bg-[#14141F] h-[800px] px-20 py-56 flex">
-            <div class="w-1/2">
-                <h1 class="text-[56px] font-bold text-white leading-tight">Discover, and collect<br>
+        <div class="bg-[#14141F] h-[800px] px-20 py-56 flex sm:max-md:py-10 sm:max-md:flex-col-reverse sm:max-md:h-auto sm:max-md:px-2 sm:max-md:gap-y-8 md:max-lg:px-4 md:max-lg:pt-8">
+            <div class="w-1/2 sm:max-md:w-full">
+                <h1 class="text-[56px] font-bold text-white leading-tight sm:max-md:text-[22px] md:max-lg:text-[40px]">Discover, and collect<br>
                     extraordinary <br>
                     <span class="bg-clip-text bg-gradient-to-b from-[#E250E5]  to-[#4B50E6] text-fill-transparent">Monster</span>
                     NFTs</h1>
-                <p class="text-white text-xl mt-[29px] mb-9">Marketplace for monster character cllections non fungible
+                <p class="text-white text-xl mt-[29px] mb-9 sm:max-md:text-[18px]">Marketplace for monster character collections non fungible
                     token NFTs</p>
 
-                <div class="flex gap-x-4">
+                <div class="flex gap-x-4 sm:max-md:flex-col gap-y-8">
                     <a href="#"
                        class="px-9 py-4 flex items-center font-bold text-[15px] text-white gap-x-2 border-2 border-[#5142FC] rounded-full cursor-pointer">
                         <svg width="16" height="21" viewBox="0 0 16 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -48,15 +48,15 @@
                     </a>
                 </div>
             </div>
-            <div class="w-1/2">
-                <img src="{{asset('/img/bannerhome.png')}}" alt="banner-home">
+            <div class="w-1/2 sm:max-md:h-[150px] sm:max-md:w-full">
+                <img src="{{asset('/img/bannerhome.png')}}" alt="banner-home" class="sm:max-md:w-full">
             </div>
         </div>
 
     </section>
 
-    <section class="flex gap-x-[38px] mt-[28px] justify-center ms-[260px] me-[260px] mb-[80px]">
-        <div class="flex flex-col items-center gap-y-[24px] w-[321px]">
+    <section class="flex gap-x-[38px] mt-[28px] justify-center ms-[260px] me-[260px] mb-[80px] sm:max-md:flex-col sm:max-md:w-full sm:max-md:m-auto sm:max-md:gap-y-8 md:max-lg:mx-0 lg:max-2xl:mx-0">
+        <div class="flex flex-col items-center gap-y-[24px] w-[321px] sm:max-md:w-full">
             <div class="rounded-[16px] bg-[#5142FC] w-[56px] h-[56px] flex items-center justify-center">
                 <svg width="24" height="21" viewBox="0 0 24 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -72,7 +72,7 @@
                     right corner.</p>
             </div>
         </div>
-        <div class="flex flex-col items-center gap-y-[24px] w-[321px]">
+        <div class="flex flex-col items-center gap-y-[24px] w-[321px] sm:max-md:w-full">
             <div class="rounded-[16px] bg-[#47A432] w-[56px] h-[56px] flex items-center justify-center">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -96,7 +96,7 @@
                     description, profile & banner images, and set a secondary sales fee.</p>
             </div>
         </div>
-        <div class="flex flex-col items-center gap-y-[24px] w-[321px]">
+        <div class="flex flex-col items-center gap-y-[24px] w-[321px] sm:max-md:w-full">
             <div class="rounded-[16px] bg-[#9835FB] w-[56px] h-[56px] flex items-center justify-center">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -114,7 +114,7 @@
                     description, and customize your NFTs with properties, stats.</p>
             </div>
         </div>
-        <div class="flex flex-col items-center gap-y-[24px] w-[321px]">
+        <div class="flex flex-col items-center gap-y-[24px] w-[321px] sm:max-md:w-full">
             <div class="rounded-[16px] bg-[#DF4949] w-[56px] h-[56px] flex items-center justify-center">
                 <svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -133,8 +133,8 @@
 
     <section class="pb-[116px] bg-[#0D0D11]">
 
-        <div class="flex text-white pt-[60px] px-[255px] justify-between items-center mb-[60px]">
-            <h1 class="font-bold text-[36px] leading-[44px]">Live Auctions</h1>
+        <div class="flex text-white pt-[60px] px-[255px] justify-between items-center mb-[60px] sm:max-md:px-4 md:max-lg:px-10 lg:max-2xl:px-5">
+            <h1 class="font-bold text-[36px] leading-[44px] sm:max-md:text-[24px]">Live Auctions</h1>
             <div>
                 <a href="#">Explore more</a>
                 <div class="bg-gradient-to-r from-[#E250E5] to-[#4B50E6] h-[1px]"></div>
@@ -149,26 +149,26 @@
     </section>
 
     <section>
-        <div class="flex text-white pt-[60px] px-[255px] justify-between items-center mb-[60px]">
-            <h1 class="font-bold text-[36px] leading-[44px]">Popullar Colection</h1>
+        <div class="flex text-white pt-[60px] px-[255px] justify-between items-center mb-[60px] sm:max-md:px-2 md:max-lg:px-10 lg:max-2xl:px-5">
+            <h1 class="font-bold text-[36px] leading-[44px] sm:max-md:text-[24px] ">Popullar Colection</h1>
             <div>
                 <a href="#">Explore more</a>
                 <div class="bg-gradient-to-r from-[#E250E5] to-[#4B50E6] h-[1px]"></div>
             </div>
         </div>
-        <div class="flex gap-x-4 p-6 ml-[50px] mr-[50px]">
+        <div class="flex gap-x-4 p-6 ml-[50px] mr-[50px] sm:max-md:flex-col sm:max-md:gap-y-4 sm:max-md:m-auto md:max-lg:flex-wrap md:max-lg:gap-y-4">
             <x-collection-item :collection="$collection"></x-collection-item>
         </div>
     </section>
 
     <section>
-        <div class="flex text-white pt-[60px] px-[255px] justify-between items-center mb-[60px]">
-            <h1 class="font-bold text-[36px] leading-[44px]">Top Seller</h1>
+        <div class="flex text-white pt-[60px] px-[255px] justify-between items-center mb-[60px] sm:max-md:px-0 md:max-lg:px-10 lg:max-2xl:px-5">
+            <h1 class="font-bold text-[36px] leading-[44px] sm:max-md:text-[24px]">Top Seller</h1>
             <div>
                 <div class="bg-gradient-to-r from-[#E250E5] to-[#4B50E6] h-[1px]"></div>
             </div>
         </div>
-        <div class="flex gap-x-4 p-6 ml-[50px] mr-[50px] items-center">
+        <div class="flex gap-x-4 p-6 ml-[50px] mr-[50px] items-center sm:max-md:flex-col sm:max-md:px-0 sm:max-md:mx-0">
 
             @foreach($users as $user)
                 <div class="bg-[#7A798A] w-[100px] h-[100px] rounded-2xl relative">
@@ -193,7 +193,7 @@
 
 
     <section class="mb-20">
-        <div class="flex text-white pt-[60px] px-[255px] justify-between items-center mb-[60px]">
+        <div class="flex text-white pt-[60px] px-[255px] justify-between items-center mb-[60px] sm:max-md:px-2 md:max-lg:px-10 lg:max-2xl:px-5">
             <h1 class="font-bold text-[36px] leading-[44px]">Today's Picks</h1>
             <div>
                 <div class="bg-gradient-to-r from-[#E250E5] to-[#4B50E6] h-[1px]"></div>

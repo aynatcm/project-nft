@@ -1,8 +1,8 @@
-<div class="ml-[50px] mr-[50px] grid gap-x-[20px] gap-y-10  {{ request()->routeIs('explore','explore.filter') ? 'grid-cols-3' : 'grid-cols-4'}}">
+<div class="ml-[50px] mr-[50px] grid gap-x-[20px] gap-y-10  {{ request()->routeIs('explore','explore.filter') ? 'grid-cols-3' : 'grid-cols-4'}} sm:max-md:grid-cols-1 sm:max-md:m-0 md:max-lg:grid-cols-2 lg:max-2xl:grid-cols-3 lg:max-2xl:mx-[3rem]">
     @foreach($items as $item)
 
-        <div class="bg-[#343444] rounded-[20px] h-[520px] w-[330px] p-[20px] flex flex-col gap-y-[21px]">
-            <div class="bg-[#7A798A] w-[290px] h-[283px] rounded-[30px] relative group block duration-300 ease-in-out">
+        <div class="bg-[#343444] rounded-[20px] h-[520px] w-[330px] p-[20px] flex flex-col gap-y-[21px] sm:max-md:w-[95%] sm:max-md:m-auto">
+            <div class="bg-[#7A798A] w-[290px] h-[283px] rounded-[30px] relative group block duration-300 ease-in-out sm:max-md:w-full">
                 <a href="{{route('show',['item'=>$item, 'user'=>$item->user])}}">
                     <img src="{{asset('uploads').'/'.$item->img_item}}" alt=""
                          class="w-full h-full rounded-3xl object-cover z-10  "
