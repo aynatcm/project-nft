@@ -19,10 +19,12 @@
                 <div class="flex flex-col w-1/2">
                     <h6 class="text-[18px] font-bold text-white">{{$collect->name}}</h6>
                     <span class="font-normal text-[13px] text-[#8A8AA0]">Created by
-                        <span
-                            class="font-bold text-[14px] text-white">
-                            {{$collect->user->name}}
-                        </span>
+                        <a href="{{route('author',$collect->user->name)}}">
+                            <span
+                                class="font-bold text-[14px] text-white">
+                                {{$collect->user->name}}
+                            </span>
+                        </a>
                     </span>
                 </div>
             </div>

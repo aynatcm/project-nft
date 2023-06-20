@@ -32,6 +32,8 @@ class ExploreController extends Controller
             $query->whereIn('collection_id',$collections);
         }
 
+
+
         $item = $query->get();
         $categories = Category::all();
         $collections = Collection::all();

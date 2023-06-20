@@ -36,7 +36,9 @@
                         </div>
                         <div>
                             <h4 class="text-[#8A8AA0] font-normal text-[13px] leading-[20px]">Creator</h4>
-                            <h3 class="text-white font-bold text-[15px] leading-[22px] break-all w-[70px]">{{$item->user->name}}</h3>
+                            <a href="{{route('author',$item->user->name)}}" class="text-white font-bold text-[15px] leading-[22px] break-all w-[70px]">
+                                {{$item->user->name}}
+                            </a>
                         </div>
                     </div>
                     <div

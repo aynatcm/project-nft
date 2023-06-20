@@ -66,30 +66,56 @@
             </span>
             </div>
 
-            @unless(\Illuminate\Support\Facades\Auth::user()->name === $user->name)
+            {{--            @unless(auth()->user()->name === $user->name)--}}
 
 
-                @if($user->isFollowing(auth()->user()))
-                    <form action="{{route('followers.destroy',$user)}}" method="post">
-                        @csrf
-                        @method('DELETE')
-                        <button
-                            class="h-[40px] flex items-center justify-center p-4 border-white border-2 rounded-2xl text-white">
-                            Unfollow
-                        </button>
-                    </form>
+            {{--                @if($user->isFollowing(auth()->user()))--}}
+            {{--                    <form action="{{route('followers.destroy',$user)}}" method="post">--}}
+            {{--                        @csrf--}}
+            {{--                        @method('DELETE')--}}
+            {{--                        <button--}}
+            {{--                            class="h-[40px] flex items-center justify-center p-4 border-white border-2 rounded-2xl text-white">--}}
+            {{--                            Unfollow--}}
+            {{--                        </button>--}}
+            {{--                    </form>--}}
 
-                @else
-                    <form action="{{route('followers.store',$user)}}" method="post">
-                        @csrf
-                        <button
-                            class="h-[40px] flex items-center justify-center p-4 border-white border-2 rounded-2xl text-white">
-                            Follow
-                        </button>
-                    </form>
-                @endif
+            {{--                @else--}}
+            {{--                    <form action="{{route('followers.store',$user)}}" method="post">--}}
+            {{--                        @csrf--}}
+            {{--                        <button--}}
+            {{--                            class="h-[40px] flex items-center justify-center p-4 border-white border-2 rounded-2xl text-white">--}}
+            {{--                            Follow--}}
+            {{--                        </button>--}}
+            {{--                    </form>--}}
+            {{--                @endif--}}
 
-            @endunless
+            {{--            @endunless--}}
+
+            @auth()
+                @unless(auth()->user()->name === $user->name)
+
+                    @if($user->isFollowing(auth()->user()))
+                        <form action="{{route('followers.destroy',$user)}}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button
+                                class="h-[40px] flex items-center justify-center p-4 border-white border-2 rounded-2xl text-white">
+                                Unfollow
+                            </button>
+                        </form>
+
+                    @else
+                        <form action="{{route('followers.store',$user)}}" method="post">
+                            @csrf
+                            <button
+                                class="h-[40px] flex items-center justify-center p-4 border-white border-2 rounded-2xl text-white">
+                                Follow
+                            </button>
+                        </form>
+                    @endif
+
+                @endunless
+            @endauth
 
 
         </div>

@@ -57,6 +57,9 @@
 
 
         <div class="w-[80%]">
+            @if($item->count() == 0)
+                <h1 class="text-white text-2xl text-center flex items-center justify-center h-full font-bold">hola, no hemos encontrado nada con tus criterios de busqueda</h1>
+            @endif
             <x-card :items="$item"></x-card>
         </div>
     </section>

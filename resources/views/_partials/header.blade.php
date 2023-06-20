@@ -21,17 +21,17 @@
         </div>
         <ul class="flex gap-x-10">
             @auth()
-                <li><a href="#" class="list-item">Home</a></li>
-                <li><a href="#" class="list-item">Explore</a></li>
-                <li><a href="#" class="list-item">Activity</a></li>
-                <li><a href="#" class="list-item">Community</a></li>
+                <li><a href="{{route('home')}}" class="list-item">Home</a></li>
+                <li><a href="{{route('explore')}}" class="list-item">Explore</a></li>
+                <li><a href="{{route('create')}}" class="list-item">Create item</a></li>
+                <li><a href="{{route('collection')}}" class="list-item">Create Collection</a></li>
             @endauth
 
             @guest()
-                <li><a href="#" class="list-item">Home</a></li>
-                <li><a href="#" class="list-item">Explore</a></li>
-                <li><a href="#" class="list-item">Activity</a></li>
-                <li><a href="#" class="list-item">Community</a></li>
+                <li><a href="{{route('home')}}" class="list-item">Home</a></li>
+                <li><a href="{{route('explore')}}" class="list-item">Explore</a></li>
+                <li><a href="{{route('create')}}" class="list-item">Create item</a></li>
+                <li><a href="{{route('collection')}}" class="list-item">Create Collection</a></li>
                 <li><a href="{{route('login')}}" class="list-item">Login</a></li>
                 <li><a href="{{route('register')}}" class="list-item">Register</a></li>
             @endguest
