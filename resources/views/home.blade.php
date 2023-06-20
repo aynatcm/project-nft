@@ -20,6 +20,7 @@
 @yield('show-item')
 @yield('author')
 @yield('collection')
+@yield('explore')
 @include('_partials.footer')
 @if(Route::current()->getName() === 'create')
     @vite('resources/js/index.js')

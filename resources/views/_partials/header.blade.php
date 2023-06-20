@@ -82,7 +82,7 @@
             <span class="text-[#8A8AA0] font-normal text-lg">Home / &nbsp;</span>
             <span class="text-[#8A8AA0] font-normal text-lg">Pages /</span>
             <span
-                class="text-white font-normal text-lg">&nbsp; {{__("You are logged in" )}} {{ Auth::user()->name }}</span>
+                class="text-white font-normal text-lg">&nbsp; {{__("You are logged in" )}} <strong> {{ Auth::user()->name }} </strong></span>
 
         </span>
         </div>

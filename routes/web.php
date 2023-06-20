@@ -3,6 +3,7 @@
 use App\Http\Controllers\CollectionController;
 use App\Http\Controllers\CreateCollectionItem;
 use App\Http\Controllers\CreateItemController;
+use App\Http\Controllers\ExploreController;
 use App\Http\Controllers\FollowersController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImageController;
@@ -65,5 +66,9 @@ Route::middleware('auth')->group(function () {
 Route::get('/{user:name}/items/{item}', [CreateItemController::class, 'show'])->name('show');
 
 Route::get('/author/{user:name}', [CreateItemController::class, 'index'])->name('author');
+
+Route::get('/explore',[ExploreController::class,'index'])->name('explore');
+
+Route::post('/explore',[ExploreController::class,'filter'])->name('explore.filter');
 
 require __DIR__ . '/auth.php';

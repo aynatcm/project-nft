@@ -14,6 +14,7 @@ class FollowersController extends Controller
             Auth::id(),
         );
 
+
         return back();
     }
 
@@ -22,7 +23,7 @@ class FollowersController extends Controller
         $user->followers()->detach(
             Auth::id(),
         );
-
         return back();
     }
+
 }

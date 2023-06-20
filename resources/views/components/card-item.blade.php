@@ -1,5 +1,5 @@
 <div class="bg-[#343444] rounded-[20px] h-[520px] w-[330px] p-[20px] flex flex-col gap-y-[21px] ">
-    <div class="bg-[#7A798A] w-[290px] h-[283px] rounded-[20px] relative group block duration-300 ease-in-out">
+    <div class="bg-[#7A798A] w-[290px]  rounded-[20px] relative group block duration-300 ease-in-out">
 
         <div
             class="group-hover:flex group-hover:items-center group-hover:justify-center {{request()->routeIs('create')?'block' : 'hidden'}} ease-in-out image_bg bg-[#7A798A] w-full h-[271px] rounded-3xl relative group">
