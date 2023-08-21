@@ -42,8 +42,8 @@ Route::middleware('auth')->group(function () {
 //    Route::get('/create', [CreateItemController::class, 'index'])->name('create');
 
     Route::get('/create', [CreateItemController::class, 'create'])->name('create');
-    Route::post('/create', [CreateItemController::class, 'store'])->name('create-item.store');
 
+    Route::post('/create', [CreateItemController::class, 'store'])->name('create-item.store');
 
     Route::get('/create-collection', [CreateCollectionItem::class, 'index'])->name('collection');
 
